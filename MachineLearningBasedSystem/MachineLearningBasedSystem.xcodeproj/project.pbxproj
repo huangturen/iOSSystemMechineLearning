@@ -15,6 +15,7 @@
 		B0EFBFF2265BB9C500507015 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0EFBFF0265BB9C500507015 /* LaunchScreen.storyboard */; };
 		B0EFBFFD265BB9C600507015 /* MachineLearningBasedSystemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EFBFFC265BB9C600507015 /* MachineLearningBasedSystemTests.swift */; };
 		B0EFC008265BB9C600507015 /* MachineLearningBasedSystemUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EFC007265BB9C600507015 /* MachineLearningBasedSystemUITests.swift */; };
+		B0EFC018265BBC2600507015 /* MLCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EFC017265BBC2600507015 /* MLCapture.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		B0EFC003265BB9C600507015 /* MachineLearningBasedSystemUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MachineLearningBasedSystemUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0EFC007265BB9C600507015 /* MachineLearningBasedSystemUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MachineLearningBasedSystemUITests.swift; sourceTree = "<group>"; };
 		B0EFC009265BB9C600507015 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0EFC017265BBC2600507015 /* MLCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLCapture.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,8 @@
 		B0EFBFE4265BB9C400507015 /* MachineLearningBasedSystem */ = {
 			isa = PBXGroup;
 			children = (
+				B0EFC016265BBBBF00507015 /* ObjectDetection */,
+				B0EFC015265BBBAB00507015 /* ImageClassify */,
 				B0EFBFE5265BB9C400507015 /* AppDelegate.swift */,
 				B0EFBFE7265BB9C400507015 /* SceneDelegate.swift */,
 				B0EFBFE9265BB9C400507015 /* ViewController.swift */,
@@ -106,6 +110,7 @@
 				B0EFBFEE265BB9C500507015 /* Assets.xcassets */,
 				B0EFBFF0265BB9C500507015 /* LaunchScreen.storyboard */,
 				B0EFBFF3265BB9C500507015 /* Info.plist */,
+				B0EFC017265BBC2600507015 /* MLCapture.swift */,
 			);
 			path = MachineLearningBasedSystem;
 			sourceTree = "<group>";
@@ -126,6 +131,20 @@
 				B0EFC009265BB9C600507015 /* Info.plist */,
 			);
 			path = MachineLearningBasedSystemUITests;
+			sourceTree = "<group>";
+		};
+		B0EFC015265BBBAB00507015 /* ImageClassify */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ImageClassify;
+			sourceTree = "<group>";
+		};
+		B0EFC016265BBBBF00507015 /* ObjectDetection */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ObjectDetection;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +280,7 @@
 				B0EFBFEA265BB9C400507015 /* ViewController.swift in Sources */,
 				B0EFBFE6265BB9C400507015 /* AppDelegate.swift in Sources */,
 				B0EFBFE8265BB9C400507015 /* SceneDelegate.swift in Sources */,
+				B0EFC018265BBC2600507015 /* MLCapture.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,6 +458,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MachineLearningBasedSystem/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -456,6 +477,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MachineLearningBasedSystem/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
