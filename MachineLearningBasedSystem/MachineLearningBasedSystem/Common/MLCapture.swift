@@ -18,12 +18,14 @@ class MLCaputure : NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
     weak var delegate: CaptureImageDelegate?
     let caputureSession : AVCaptureSession
     
-    static let shared = MLCaputure()
-    
     override init() {
         caputureSession = AVCaptureSession()
         caputureSession.sessionPreset = AVCaptureSession.Preset.photo
         super.init()
+    }
+    
+    deinit {
+        caputureSession.stopRunning()
     }
     
     func setupCaptureSession() -> AVCaptureSession {
