@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B02A1967265CDCC5004DEC2C /* ImageClassifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02A1966265CDCC5004DEC2C /* ImageClassifyViewController.swift */; };
-		B02A196A265CDD22004DEC2C /* SystemMLType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02A1969265CDD22004DEC2C /* SystemMLType.swift */; };
-		B02A196C265CDDAB004DEC2C /* SystemMLBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02A196B265CDDAB004DEC2C /* SystemMLBaseViewController.swift */; };
-		B02A196E265CEEC7004DEC2C /* ObjectDetectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02A196D265CEEC7004DEC2C /* ObjectDetectViewController.swift */; };
+		B02A1967265CDCC5004DEC2C /* MLImageClassifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02A1966265CDCC5004DEC2C /* MLImageClassifyViewController.swift */; };
+		B02A196A265CDD22004DEC2C /* MLSystemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02A1969265CDD22004DEC2C /* MLSystemType.swift */; };
+		B02A196C265CDDAB004DEC2C /* MLBasedSystemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02A196B265CDDAB004DEC2C /* MLBasedSystemViewController.swift */; };
+		B02A196E265CEEC7004DEC2C /* MLObjectDetectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02A196D265CEEC7004DEC2C /* MLObjectDetectViewController.swift */; };
+		B0BB14F4265E442E00A250F8 /* MLVisionSaliency.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BB14F3265E442E00A250F8 /* MLVisionSaliency.swift */; };
+		B0BB14F6265E45FD00A250F8 /* MLSaliencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BB14F5265E45FD00A250F8 /* MLSaliencyViewController.swift */; };
 		B0EFBFE6265BB9C400507015 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EFBFE5265BB9C400507015 /* AppDelegate.swift */; };
 		B0EFBFE8265BB9C400507015 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EFBFE7265BB9C400507015 /* SceneDelegate.swift */; };
 		B0EFBFEA265BB9C400507015 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EFBFE9265BB9C400507015 /* ViewController.swift */; };
@@ -40,10 +42,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B02A1966265CDCC5004DEC2C /* ImageClassifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageClassifyViewController.swift; sourceTree = "<group>"; };
-		B02A1969265CDD22004DEC2C /* SystemMLType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemMLType.swift; sourceTree = "<group>"; };
-		B02A196B265CDDAB004DEC2C /* SystemMLBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemMLBaseViewController.swift; sourceTree = "<group>"; };
-		B02A196D265CEEC7004DEC2C /* ObjectDetectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDetectViewController.swift; sourceTree = "<group>"; };
+		B02A1966265CDCC5004DEC2C /* MLImageClassifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLImageClassifyViewController.swift; sourceTree = "<group>"; };
+		B02A1969265CDD22004DEC2C /* MLSystemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLSystemType.swift; sourceTree = "<group>"; };
+		B02A196B265CDDAB004DEC2C /* MLBasedSystemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLBasedSystemViewController.swift; sourceTree = "<group>"; };
+		B02A196D265CEEC7004DEC2C /* MLObjectDetectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLObjectDetectViewController.swift; sourceTree = "<group>"; };
+		B0BB14F3265E442E00A250F8 /* MLVisionSaliency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLVisionSaliency.swift; sourceTree = "<group>"; };
+		B0BB14F5265E45FD00A250F8 /* MLSaliencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLSaliencyViewController.swift; sourceTree = "<group>"; };
 		B0EFBFE2265BB9C400507015 /* MachineLearningBasedSystem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MachineLearningBasedSystem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0EFBFE5265BB9C400507015 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0EFBFE7265BB9C400507015 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,10 +94,19 @@
 			isa = PBXGroup;
 			children = (
 				B0EFC017265BBC2600507015 /* MLCapture.swift */,
-				B02A1969265CDD22004DEC2C /* SystemMLType.swift */,
-				B02A196B265CDDAB004DEC2C /* SystemMLBaseViewController.swift */,
+				B02A1969265CDD22004DEC2C /* MLSystemType.swift */,
+				B02A196B265CDDAB004DEC2C /* MLBasedSystemViewController.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		B0BB14F2265E3A7B00A250F8 /* ImageSaliency */ = {
+			isa = PBXGroup;
+			children = (
+				B0BB14F3265E442E00A250F8 /* MLVisionSaliency.swift */,
+				B0BB14F5265E45FD00A250F8 /* MLSaliencyViewController.swift */,
+			);
+			path = ImageSaliency;
 			sourceTree = "<group>";
 		};
 		B0EFBFD9265BB9C400507015 = {
@@ -119,6 +132,7 @@
 		B0EFBFE4265BB9C400507015 /* MachineLearningBasedSystem */ = {
 			isa = PBXGroup;
 			children = (
+				B0BB14F2265E3A7B00A250F8 /* ImageSaliency */,
 				B02A1968265CDD01004DEC2C /* Common */,
 				B0EFC016265BBBBF00507015 /* ObjectDetection */,
 				B0EFC015265BBBAB00507015 /* ImageClassify */,
@@ -154,7 +168,7 @@
 		B0EFC015265BBBAB00507015 /* ImageClassify */ = {
 			isa = PBXGroup;
 			children = (
-				B02A1966265CDCC5004DEC2C /* ImageClassifyViewController.swift */,
+				B02A1966265CDCC5004DEC2C /* MLImageClassifyViewController.swift */,
 			);
 			path = ImageClassify;
 			sourceTree = "<group>";
@@ -162,7 +176,7 @@
 		B0EFC016265BBBBF00507015 /* ObjectDetection */ = {
 			isa = PBXGroup;
 			children = (
-				B02A196D265CEEC7004DEC2C /* ObjectDetectViewController.swift */,
+				B02A196D265CEEC7004DEC2C /* MLObjectDetectViewController.swift */,
 			);
 			path = ObjectDetection;
 			sourceTree = "<group>";
@@ -298,12 +312,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0EFBFEA265BB9C400507015 /* ViewController.swift in Sources */,
+				B0BB14F6265E45FD00A250F8 /* MLSaliencyViewController.swift in Sources */,
 				B0EFBFE6265BB9C400507015 /* AppDelegate.swift in Sources */,
 				B0EFBFE8265BB9C400507015 /* SceneDelegate.swift in Sources */,
-				B02A196C265CDDAB004DEC2C /* SystemMLBaseViewController.swift in Sources */,
-				B02A196E265CEEC7004DEC2C /* ObjectDetectViewController.swift in Sources */,
-				B02A196A265CDD22004DEC2C /* SystemMLType.swift in Sources */,
-				B02A1967265CDCC5004DEC2C /* ImageClassifyViewController.swift in Sources */,
+				B02A196C265CDDAB004DEC2C /* MLBasedSystemViewController.swift in Sources */,
+				B02A196E265CEEC7004DEC2C /* MLObjectDetectViewController.swift in Sources */,
+				B02A196A265CDD22004DEC2C /* MLSystemType.swift in Sources */,
+				B0BB14F4265E442E00A250F8 /* MLVisionSaliency.swift in Sources */,
+				B02A1967265CDCC5004DEC2C /* MLImageClassifyViewController.swift in Sources */,
 				B0EFC018265BBC2600507015 /* MLCapture.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
