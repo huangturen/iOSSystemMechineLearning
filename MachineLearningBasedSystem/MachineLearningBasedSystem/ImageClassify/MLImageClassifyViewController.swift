@@ -8,8 +8,8 @@
 import UIKit
 import Vision
 
-class ImageClassifyViewController : SystemMLBaseViewController, CaptureImageDelegate{
-    let type : SystemMLType = .classify
+class MLImageClassifyViewController : MLBasedSystemViewController, CaptureImageDelegate{
+    let type : MLSystemType = .classify
     let label = UILabel.init()
     
     override func viewDidLoad() {

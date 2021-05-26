@@ -7,19 +7,22 @@
 
 import UIKit
 import Vision
+import AVKit
 
-class SystemMLBaseViewController: UIViewController {
+class MLBasedSystemViewController: UIViewController {
     deinit {
         capture.caputureSession.stopRunning()
     }
  
     let capture = MLCaputure()
+    var videoLayer : AVCaptureVideoPreviewLayer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let layer = capture.captureLayer()
-        layer.frame = view.frame;
-        view.layer.addSublayer(layer)
+        videoLayer = capture.captureLayer()
+        videoLayer!.frame = view.layer.bounds;
+        videoLayer!.videoGravity = .resizeAspectFill
+        view.layer.addSublayer(videoLayer!)
     }
     
     @available(iOS 11.0, *)
@@ -29,6 +32,11 @@ class SystemMLBaseViewController: UIViewController {
         DispatchQueue.main.async {
             self.processResults(result: result)
         }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        updateLayersGeometry()
+        super.viewDidLayoutSubviews()
     }
     
     @available(iOS 11.0, *)
@@ -58,5 +66,8 @@ class SystemMLBaseViewController: UIViewController {
     @available(iOS 11.0, *)
     func createRequest() -> VNRequest?{
         fatalError("SubClass should impl")
+    }
+    
+    func updateLayersGeometry() -> Void {
     }
 }

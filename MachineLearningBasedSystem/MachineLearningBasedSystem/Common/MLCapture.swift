@@ -17,6 +17,7 @@ class MLCaputure : NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
     
     weak var delegate: CaptureImageDelegate?
     let caputureSession : AVCaptureSession
+    var videoLayer : AVCaptureVideoPreviewLayer?
     
     override init() {
         caputureSession = AVCaptureSession()
@@ -41,11 +42,16 @@ class MLCaputure : NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
         caputureSession.addOutput(dataOutput)
         
         caputureSession.startRunning()
+        videoLayer = AVCaptureVideoPreviewLayer(session: caputureSession)
         return caputureSession
     }
     
     func captureLayer() -> AVCaptureVideoPreviewLayer {
-        return AVCaptureVideoPreviewLayer(session: self.setupCaptureSession())
+        if videoLayer == nil {
+            let _ = setupCaptureSession()
+            return videoLayer!
+        }
+        return videoLayer!
     }
     
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {

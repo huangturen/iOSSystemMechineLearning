@@ -8,8 +8,8 @@
 import UIKit
 import Vision
 
-class ObjectDetectViewController : SystemMLBaseViewController, CaptureImageDelegate{
-    let type : SystemMLType = .objectDectect
+class MLObjectDetectViewController : MLBasedSystemViewController, CaptureImageDelegate{
+    let type : MLSystemType = .objectDectect
     let boxLayer : CAShapeLayer = CAShapeLayer()
     
     override func viewDidLoad() {
@@ -22,8 +22,8 @@ class ObjectDetectViewController : SystemMLBaseViewController, CaptureImageDeleg
 //                             width:view.frame.width,
 //                             height: 20)
 //        label.textAlignment = .center
-        boxLayer.frame = view.frame
-        view.layer.addSublayer(boxLayer)
+        boxLayer.frame = view.layer.bounds
+        videoLayer!.addSublayer(boxLayer)
         boxLayer.strokeColor = UIColor.yellow.cgColor
         boxLayer.fillColor = nil
     }
@@ -39,12 +39,20 @@ class ObjectDetectViewController : SystemMLBaseViewController, CaptureImageDeleg
     
     @available(iOS 11.0, *)
     override func processResults(result: [VNObservation]?) -> Void {
-        guard let rets : [VNDetectedObjectObservation] = result as? [VNDetectedObjectObservation] else { return }
+        guard let rets : [VNDetectedObjectObservation] = result as? [ VNDetectedObjectObservation ] else { return }
         let pathT = CGAffineTransform(scaleX: boxLayer.bounds.width, y: boxLayer.bounds.height)
         let path = CGMutablePath()
         for object in rets {
             path.addRect(object.boundingBox, transform: pathT)
         }
         boxLayer.path = path
+    }
+    
+    override func updateLayersGeometry() {
+        if let baseLayer = videoLayer {
+            let outputRect = CGRect(x: 0, y: 0, width: 1, height: 1)
+            let videoRect = baseLayer.layerRectConverted(fromMetadataOutputRect: outputRect)
+            boxLayer.frame = videoRect
+        }
     }
 }

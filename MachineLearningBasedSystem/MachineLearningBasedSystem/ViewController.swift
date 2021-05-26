@@ -12,7 +12,7 @@ import Vision
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
-    static let typesArray = ["classify","objectDetect"];
+    static let typesArray = ["classify","objectDetect","saliency"];
 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -32,13 +32,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let typestr = ViewController.typesArray[indexPath.row]
-        var vc:SystemMLBaseViewController? = nil;
+        var vc:MLBasedSystemViewController? = nil;
         switch typestr {
             case "classify":
-                vc = ImageClassifyViewController()
+                vc = MLImageClassifyViewController()
                 break
             case "objectDetect":
-                vc = ObjectDetectViewController()
+                vc = MLObjectDetectViewController()
+                break
+            case "saliency":
+                if #available(iOS 13.0, *) {
+                    vc = MLSaliencyViewController()
+                } else {
+                    // Fallback on earlier versions
+                }
                 break
             default:
                 break
