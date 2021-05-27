@@ -21,13 +21,20 @@ class MLSaliencyViewController: MLBasedSystemViewController, CaptureImageDelegat
     }
     
     let saliencyMaskLayer = CALayer()
+    let salientObjectsLayer = CAShapeLayer()
+    var salientObjectsPathTransform = CGAffineTransform.identity
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         capture.delegate = self
         videoLayer!.addSublayer(saliencyMaskLayer)
+        salientObjectsLayer.fillColor = nil
+        salientObjectsLayer.strokeColor = #colorLiteral(red: 1, green: 0.5781051517, blue: 0, alpha: 1)
+        videoLayer!.addSublayer(salientObjectsLayer)
+
         let userDefaults = UserDefaults.standard
-        userDefaults.register(defaults: [
-                                userDefaults.saliencyTypeKey : SaliencyType.attentionBased.rawValue,
+        userDefaults.register(defaults: [//change SaliencyType here objectnessBased or attentionBased
+                                userDefaults.saliencyTypeKey : SaliencyType.objectnessBased.rawValue,
                                 userDefaults.viewModelKey : ViewModel.combined.rawValue])
         updateLayersVisibility()
     }
@@ -47,9 +54,15 @@ class MLSaliencyViewController: MLBasedSystemViewController, CaptureImageDelegat
         guard let ret : [VNSaliencyImageObservation] = result as? [VNSaliencyImageObservation]  else {
             return
         }
-        
-        let mask = createHeapMap(observation: ret.first!)
-        saliencyMaskLayer.contents = mask
+        let path = createSalientObjectsBoundingBoxPath(from: ret.first!, transform: self.salientObjectsPathTransform)
+        DispatchQueue.main.async {
+            print(path)
+            self.salientObjectsLayer.path = path
+        }
+//        let mask = createHeapMap(observation: ret.first!)
+//        DispatchQueue.main.async {
+//            self.saliencyMaskLayer.contents = mask
+//        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -65,11 +78,27 @@ class MLSaliencyViewController: MLBasedSystemViewController, CaptureImageDelegat
         return CIContext().createCGImage(saliencyImage, from: saliencyImage.extent)
     }
     
+    func createSalientObjectsBoundingBoxPath(from observation: VNSaliencyImageObservation, transform:CGAffineTransform) -> CGPath {
+        let path = CGMutablePath()
+        if let salientObjects = observation.salientObjects {
+            for object in salientObjects {
+                let bbox = object.boundingBox
+                path.addRect(bbox, transform: transform)
+            }
+        }
+        return path
+    }
+    
      override func updateLayersGeometry() -> Void {
         if let baseLayer = videoLayer {
             let outputRect = CGRect(x: 0, y: 0, width: 1, height: 1)
             let videoRect = baseLayer.layerRectConverted(fromMetadataOutputRect: outputRect)
             saliencyMaskLayer.frame = videoRect
+            salientObjectsLayer.frame = videoRect
+            
+            let scaleT = CGAffineTransform(scaleX: salientObjectsLayer.bounds.width, y: -salientObjectsLayer.bounds.height)
+            let translateT = CGAffineTransform(translationX: 0, y: salientObjectsLayer.bounds.height)
+            salientObjectsPathTransform = scaleT.concatenating(translateT)
         }
     }
     
