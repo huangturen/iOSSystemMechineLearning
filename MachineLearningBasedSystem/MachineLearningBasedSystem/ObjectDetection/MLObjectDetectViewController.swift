@@ -39,11 +39,12 @@ class MLObjectDetectViewController : MLBasedSystemViewController, CaptureImageDe
     
     @available(iOS 11.0, *)
     override func processResults(result: [VNObservation]?) -> Void {
-        guard let rets : [VNDetectedObjectObservation] = result as? [ VNDetectedObjectObservation ] else { return }
-        let pathT = CGAffineTransform(scaleX: boxLayer.bounds.width, y: boxLayer.bounds.height)
+        guard let rets : [ VNDetectedObjectObservation ] = result as? [ VNDetectedObjectObservation ] else { return }
+        let pathT = CGAffineTransform(scaleX: boxLayer.bounds.width, y: -boxLayer.bounds.height)
+        let transform = CGAffineTransform(translationX: 0, y: boxLayer.bounds.height)
         let path = CGMutablePath()
         for object in rets {
-            path.addRect(object.boundingBox, transform: pathT)
+            path.addRect(object.boundingBox, transform: pathT.concatenating(transform))
         }
         boxLayer.path = path
     }
