@@ -12,7 +12,7 @@ import Vision
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
-    static let typesArray = ["classify","objectDetect","saliency"];
+    static let typesArray = ["classify","objectDetect","saliency", "imageRegistration"];
 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -47,6 +47,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     // Fallback on earlier versions
                 }
                 break
+            case "imageRegistration":
+                vc = MLImageRegistrationViewController()
             default:
                 break
         }

@@ -13,6 +13,8 @@
 		B02A196E265CEEC7004DEC2C /* MLObjectDetectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02A196D265CEEC7004DEC2C /* MLObjectDetectViewController.swift */; };
 		B0BB14F4265E442E00A250F8 /* MLVisionSaliency.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BB14F3265E442E00A250F8 /* MLVisionSaliency.swift */; };
 		B0BB14F6265E45FD00A250F8 /* MLSaliencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BB14F5265E45FD00A250F8 /* MLSaliencyViewController.swift */; };
+		B0BB14F9265FD2DA00A250F8 /* MLImageRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BB14F8265FD2DA00A250F8 /* MLImageRegistrationViewController.swift */; };
+		B0BB14FB265FD41800A250F8 /* image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B0BB14FA265FD41800A250F8 /* image.jpg */; };
 		B0EFBFE6265BB9C400507015 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EFBFE5265BB9C400507015 /* AppDelegate.swift */; };
 		B0EFBFE8265BB9C400507015 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EFBFE7265BB9C400507015 /* SceneDelegate.swift */; };
 		B0EFBFEA265BB9C400507015 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EFBFE9265BB9C400507015 /* ViewController.swift */; };
@@ -48,6 +50,8 @@
 		B02A196D265CEEC7004DEC2C /* MLObjectDetectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLObjectDetectViewController.swift; sourceTree = "<group>"; };
 		B0BB14F3265E442E00A250F8 /* MLVisionSaliency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLVisionSaliency.swift; sourceTree = "<group>"; };
 		B0BB14F5265E45FD00A250F8 /* MLSaliencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLSaliencyViewController.swift; sourceTree = "<group>"; };
+		B0BB14F8265FD2DA00A250F8 /* MLImageRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLImageRegistrationViewController.swift; sourceTree = "<group>"; };
+		B0BB14FA265FD41800A250F8 /* image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image.jpg; sourceTree = "<group>"; };
 		B0EFBFE2265BB9C400507015 /* MachineLearningBasedSystem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MachineLearningBasedSystem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0EFBFE5265BB9C400507015 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0EFBFE7265BB9C400507015 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +113,14 @@
 			path = ImageSaliency;
 			sourceTree = "<group>";
 		};
+		B0BB14F7265FD08C00A250F8 /* ImageRegistration */ = {
+			isa = PBXGroup;
+			children = (
+				B0BB14F8265FD2DA00A250F8 /* MLImageRegistrationViewController.swift */,
+			);
+			path = ImageRegistration;
+			sourceTree = "<group>";
+		};
 		B0EFBFD9265BB9C400507015 = {
 			isa = PBXGroup;
 			children = (
@@ -132,8 +144,9 @@
 		B0EFBFE4265BB9C400507015 /* MachineLearningBasedSystem */ = {
 			isa = PBXGroup;
 			children = (
-				B0BB14F2265E3A7B00A250F8 /* ImageSaliency */,
+				B0BB14F7265FD08C00A250F8 /* ImageRegistration */,
 				B02A1968265CDD01004DEC2C /* Common */,
+				B0BB14F2265E3A7B00A250F8 /* ImageSaliency */,
 				B0EFC016265BBBBF00507015 /* ObjectDetection */,
 				B0EFC015265BBBAB00507015 /* ImageClassify */,
 				B0EFBFE5265BB9C400507015 /* AppDelegate.swift */,
@@ -141,6 +154,7 @@
 				B0EFBFE9265BB9C400507015 /* ViewController.swift */,
 				B0EFBFEB265BB9C400507015 /* Main.storyboard */,
 				B0EFBFEE265BB9C500507015 /* Assets.xcassets */,
+				B0BB14FA265FD41800A250F8 /* image.jpg */,
 				B0EFBFF0265BB9C500507015 /* LaunchScreen.storyboard */,
 				B0EFBFF3265BB9C500507015 /* Info.plist */,
 			);
@@ -287,6 +301,7 @@
 				B0EFBFF2265BB9C500507015 /* LaunchScreen.storyboard in Resources */,
 				B0EFBFEF265BB9C500507015 /* Assets.xcassets in Resources */,
 				B0EFBFED265BB9C400507015 /* Main.storyboard in Resources */,
+				B0BB14FB265FD41800A250F8 /* image.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +335,7 @@
 				B02A196A265CDD22004DEC2C /* MLSystemType.swift in Sources */,
 				B0BB14F4265E442E00A250F8 /* MLVisionSaliency.swift in Sources */,
 				B02A1967265CDCC5004DEC2C /* MLImageClassifyViewController.swift in Sources */,
+				B0BB14F9265FD2DA00A250F8 /* MLImageRegistrationViewController.swift in Sources */,
 				B0EFC018265BBC2600507015 /* MLCapture.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
