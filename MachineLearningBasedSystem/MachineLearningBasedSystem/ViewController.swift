@@ -16,7 +16,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                              "objectDetect",
                              "saliency",
                              "imageRegistration",
-                             "textDetect"];
+                             "textDetect",
+                             "textRecongnize",
+                             "barcodeDetect",
+                             "faceDetect"];
 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -55,6 +58,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 vc = MLImageRegistrationViewController()
             case "textDetect":
                 vc = MLTextDetectViewController()
+            case "textRecongnize":
+                if #available(iOS 13.0, *) {
+                    vc = MLTextRecongnizeViewController()
+                } else {
+                    // Fallback on earlier versions
+                }
+            case "barcodeDetect":
+                vc = MLBarCodeDetectViewController()
+            case "faceDetect":
+                vc = MLFaceDetectViewController()
             default:
                 break
         }

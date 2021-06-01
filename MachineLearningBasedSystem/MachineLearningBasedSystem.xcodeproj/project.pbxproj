@@ -26,6 +26,9 @@
 		B0EFC018265BBC2600507015 /* MLCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EFC017265BBC2600507015 /* MLCapture.swift */; };
 		B0FB9B4D2660C36600DA9157 /* MLImageRegistrationViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB9B4C2660C36600DA9157 /* MLImageRegistrationViewController2.swift */; };
 		B0FB9B4F2664C15E00DA9157 /* MLTextDetectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB9B4E2664C15E00DA9157 /* MLTextDetectViewController.swift */; };
+		B0FB9B552664EB1E00DA9157 /* MLTextRecongnizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB9B542664EB1E00DA9157 /* MLTextRecongnizeViewController.swift */; };
+		B0FB9B63266530D700DA9157 /* MLBarCodeDetectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB9B62266530D700DA9157 /* MLBarCodeDetectViewController.swift */; };
+		B0FB9B6526653C8700DA9157 /* MLFaceDetectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB9B6426653C8700DA9157 /* MLFaceDetectViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +74,9 @@
 		B0EFC017265BBC2600507015 /* MLCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLCapture.swift; sourceTree = "<group>"; };
 		B0FB9B4C2660C36600DA9157 /* MLImageRegistrationViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLImageRegistrationViewController2.swift; sourceTree = "<group>"; };
 		B0FB9B4E2664C15E00DA9157 /* MLTextDetectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLTextDetectViewController.swift; sourceTree = "<group>"; };
+		B0FB9B542664EB1E00DA9157 /* MLTextRecongnizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLTextRecongnizeViewController.swift; sourceTree = "<group>"; };
+		B0FB9B62266530D700DA9157 /* MLBarCodeDetectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLBarCodeDetectViewController.swift; sourceTree = "<group>"; };
+		B0FB9B6426653C8700DA9157 /* MLFaceDetectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLFaceDetectViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +203,9 @@
 			children = (
 				B02A196D265CEEC7004DEC2C /* MLObjectDetectViewController.swift */,
 				B0FB9B4E2664C15E00DA9157 /* MLTextDetectViewController.swift */,
+				B0FB9B542664EB1E00DA9157 /* MLTextRecongnizeViewController.swift */,
+				B0FB9B62266530D700DA9157 /* MLBarCodeDetectViewController.swift */,
+				B0FB9B6426653C8700DA9157 /* MLFaceDetectViewController.swift */,
 			);
 			path = ObjectDetection;
 			sourceTree = "<group>";
@@ -337,11 +346,14 @@
 				B0EFBFE6265BB9C400507015 /* AppDelegate.swift in Sources */,
 				B0EFBFE8265BB9C400507015 /* SceneDelegate.swift in Sources */,
 				B02A196C265CDDAB004DEC2C /* MLBasedSystemViewController.swift in Sources */,
+				B0FB9B63266530D700DA9157 /* MLBarCodeDetectViewController.swift in Sources */,
+				B0FB9B6526653C8700DA9157 /* MLFaceDetectViewController.swift in Sources */,
 				B02A196E265CEEC7004DEC2C /* MLObjectDetectViewController.swift in Sources */,
 				B02A196A265CDD22004DEC2C /* MLSystemType.swift in Sources */,
 				B0BB14F4265E442E00A250F8 /* MLVisionSaliency.swift in Sources */,
 				B0FB9B4F2664C15E00DA9157 /* MLTextDetectViewController.swift in Sources */,
 				B02A1967265CDCC5004DEC2C /* MLImageClassifyViewController.swift in Sources */,
+				B0FB9B552664EB1E00DA9157 /* MLTextRecongnizeViewController.swift in Sources */,
 				B0BB14F9265FD2DA00A250F8 /* MLImageRegistrationViewController.swift in Sources */,
 				B0EFC018265BBC2600507015 /* MLCapture.swift in Sources */,
 				B0FB9B4D2660C36600DA9157 /* MLImageRegistrationViewController2.swift in Sources */,
