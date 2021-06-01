@@ -12,4 +12,6 @@ b、基于rect区域的检测
 4、translationalImageRegistration （仿射变换）
 5、HomographicImageRegistration （透视变换）
 6、textDect （文本检测）
+7、barCodeDetect （二维码识别）
+8、Face&FaceLandmarkDetect （人脸识别）
 
